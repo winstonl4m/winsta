@@ -20,3 +20,10 @@
     top: 0;
     left: 0;
   }
+
+  .image_about{
+    position: absolute;
+    top: 90%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }

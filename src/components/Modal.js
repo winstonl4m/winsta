@@ -5,8 +5,9 @@ const Modal = ({selectedImg, setSelectedImg, selectedAbout, setSelectedAbout}) =
 
     const handleClick = (event) =>{
         if(event.target.classList.contains('backdrop')){
+            console.log("about in modal: "+selectedAbout);
             setSelectedImg(null);
-            setSelectedAbout(null);
+            setSelectedAbout(null);            
         }
     }
 
@@ -15,6 +16,8 @@ const Modal = ({selectedImg, setSelectedImg, selectedAbout, setSelectedAbout}) =
 
                 <img src={selectedImg} alt ="enlarged pic"/>
                 <div className="backdrop_about">{selectedAbout}</div>
+                
+                
 
             
         </div>

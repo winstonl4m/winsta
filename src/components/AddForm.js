@@ -16,11 +16,13 @@ function AddForm() {
 
     const [isImage, setIsImage] = useState(false);
 
+    const [msg, setMsg] = useState('');
+
     let post = {
         pic: file,
-        msg: about,
+        msg: msg,
     }
-    
+
     const handleChange = (event) =>{
         let selected = event.target.files[0];
 
@@ -40,8 +42,11 @@ function AddForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-
+        if (about == null){
+            setMsg('');
+        }else{
+            setMsg(about);
+        }
         console.log(post);
         setIsImage(true);
         setAbout('');
@@ -57,23 +62,26 @@ function AddForm() {
                 <input type="file" onChange={handleChange}/>
                 <GrAddCircle/>
             </label>
+            <div className="description">
             <TextField 
+                    required
                     multiline 
                     fullWidth
                     rows={4} 
-                    id="standard-multiline-static" 
-                    helperText="Please enter an optional description" 
-                    label="Description"
+                    id="outline-multiline-static" 
+                    label="Please enter a description:"
                     variant="standard"
+                    
                     value = {about}
                     onChange= {(event) => setAbout(event.target.value)}/>
+            </div>
             
             <div className="output" >
                 {error && <div className="error">{error}</div>}
                 {file && <div>{ file.name}</div>}
                 {file && isImage && <ProgressBar file={file} setFile={setFile} post={post} /> }
             </div>
-            <Button type="submit" variant="contained">Post Picture</Button>
+            <Button type="submit" variant="outlined">Post Picture</Button>
         </form>
     )
 }

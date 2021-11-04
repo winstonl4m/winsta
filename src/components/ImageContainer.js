@@ -15,12 +15,12 @@ const ImageContainer = ({setSelectedImg, setSelectedAbout}) => {
         <div className="image_container"> 
             {docs && docs.map(doc =>(
                 <div className="image_wrap" key = {doc.id}
-                    onClick ={()=> {setSelectedImg(doc.url);setSelectedAbout(doc.about);}}
+                    onClick ={()=> {setSelectedImg(doc.url);setSelectedAbout(doc.about);console.log("about in imageContainer: " +doc.about);}}
                 
                 >
 
                     <img src ={doc.url} alt="uploaded pic"/>
-                    <h3 className="image_about">{doc.about}</h3>
+                    
                 </div>
             ))}
         </div>

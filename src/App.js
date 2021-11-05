@@ -5,7 +5,14 @@ import ImageContainer from './components/ImageContainer';
 import Modal from './components/Modal';
 import React, { useState } from 'react';
 import { GrAddCircle } from 'react-icons/gr';
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      'Zen Antique', 'serif',
+    ].join(','),
+  },});
 
 
 function App() {
@@ -21,24 +28,24 @@ function App() {
 
 
   return (
-    <div className="App">
-      <Title/>
-
-      <label>
-          <button onClick={toggleForm}/>
-          <GrAddCircle size={40} />
-      </label>
-        
-      {addclick && <AddForm/>}
-      
-      <ImageContainer setSelectedImg={setSelectedImg} setSelectedAbout={setSelectedAbout}  />
-      { selectedImg && selectedAbout &&
-        <Modal 
-          selectedImg={selectedImg} 
-          setSelectedImg={setSelectedImg}
-          selectedAbout={selectedAbout}
-          setSelectedAbout={setSelectedAbout} />}
-    </div>
+    <ThemeProvider theme={theme}>
+      <div className="App">
+            <Title/>
+            <label>
+                <button onClick={toggleForm}/>
+                <GrAddCircle size={40} />
+            </label> 
+            {addclick && <AddForm/>}
+            <ImageContainer setSelectedImg={setSelectedImg} setSelectedAbout={setSelectedAbout}  />
+            { selectedImg && selectedAbout &&
+              <Modal 
+                selectedImg={selectedImg} 
+                setSelectedImg={setSelectedImg}
+                selectedAbout={selectedAbout}
+                setSelectedAbout={setSelectedAbout} />}
+          </div>
+    </ThemeProvider>
+    
   );
 }
 

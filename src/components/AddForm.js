@@ -35,7 +35,7 @@ function AddForm() {
             
         } else{
             setFile(null);
-            setError('Please select an image file png or jpeg');
+            setError('Please select an image file (png or jpeg)');
         
         }
     }
@@ -57,32 +57,43 @@ function AddForm() {
     }
 
     return (
-        <form className="form" onSubmit={handleSubmit}>
-            <label>
-                <input type="file" onChange={handleChange}/>
-                <GrAddCircle/>
-            </label>
-            <div className="description">
-            <TextField 
-                    required
-                    multiline 
-                    fullWidth
-                    rows={4} 
-                    id="outline-multiline-static" 
-                    label="Please enter a description:"
-                    variant="standard"
-                    
-                    value = {about}
-                    onChange= {(event) => setAbout(event.target.value)}/>
-            </div>
-            
-            <div className="output" >
-                {error && <div className="error">{error}</div>}
-                {file && <div>{ file.name}</div>}
-                {file && isImage && <ProgressBar file={file} setFile={setFile} post={post} /> }
-            </div>
-            <Button type="submit" variant="outlined">Post Picture</Button>
-        </form>
+        <div className="form_container">
+            <form className="form" onSubmit={handleSubmit}>
+                
+                <Button style={{fontFamily: "Zen Antique", borderColor:"grey",color: "black", fontSize:"14px"}} variant="outlined" component="label">Upload Image
+                    <input required type="file" onChange={handleChange} />
+                </Button>
+                
+                <div className="description">
+                <TextField 
+                        InputLabelProps={{
+                            style: {
+                                color: "black",
+                                fontSize: "14px",
+                                textAlign: "center",
+                                fontFamily: "Zen Antique",
+                            }}}
+                        required
+                        multiline 
+                        fullWidth
+                        rows={4} 
+                        id="outline-multiline-static" 
+                        label="Please enter a description:"
+                        variant="standard"
+                        
+                        value = {about}
+                        onChange= {(event) => setAbout(event.target.value)}/>
+                </div>
+                
+                <div className="output" >
+                    {error && <div className="error">{error}</div>}
+                    {file && <div>{ file.name}</div>}
+                    {file && isImage && <ProgressBar file={file} setFile={setFile} post={post} /> }
+                </div>
+                <Button  style={{fontFamily: "Zen Antique", borderColor:"grey",color: "black", fontSize:"14px"}} type="submit" variant="outlined">Post Picture</Button>
+            </form>
+        </div>
+        
     )
 }
 

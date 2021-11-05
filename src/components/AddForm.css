@@ -1,8 +1,19 @@
-form{
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique&display=swap');
+
+.form_container{
+    border: 1px solid grey;
     margin: 30px auto 10px;
-    text-align: center;
+    border-radius: 5px;
     width: 40%;
-  }
+}
+
+
+
+form{
+    margin: 10px auto 10px;
+
+    width: 50%;
+}
 
   label input{
     height: 0;
@@ -26,10 +37,7 @@ form{
     font-size: 24px;
     padding-bottom: 20px;
   }
-  label:hover{
-    background: var(--primary);
-    color: white;
-  }
+
   .output{
     height: 60px;
     font-size: 0.8rem;

@@ -34,18 +34,7 @@ label button{
     opacity: 0;
 
 }
-  label{
-    cursor: pointer;
-    display: block;
-    height: 30px;
-    border: 1px solid var(--primary);
-    margin: 10px auto;
-    line-height: 30px;
-    color: var(--primary);
-    font-weight: bold;
-    font-size: 24px;
-    padding-bottom: 20px;
-  }
+
 
 @keyframes App-logo-spin {
   from {
@@ -54,4 +43,17 @@ label button{
   to {
     transform: rotate(360deg);
   }
+}
+
+label{
+  cursor: pointer;
+  display: block;
+  height: 30px;
+  border: 1px solid var(--primary);
+  margin: 10px auto;
+  line-height: 30px;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 24px;
+  padding-bottom: 20px;
 }

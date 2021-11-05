@@ -4,6 +4,7 @@ import '../components/AddForm.css';
 import TextField from '@mui/material/TextField';
 import { GrAddCircle } from 'react-icons/gr';
 import Button from '@mui/material/Button';
+import { ClassNames } from '@emotion/react';
 
 
 function AddForm() {
@@ -17,6 +18,10 @@ function AddForm() {
     const [isImage, setIsImage] = useState(false);
 
     const [msg, setMsg] = useState('');
+
+    const [clicked, setClicked] = useState(false);
+    
+    
 
     let post = {
         pic: file,
@@ -42,8 +47,8 @@ function AddForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (about == null){
-            setMsg('');
+        if (about === ""){
+            setMsg(' ');
         }else{
             setMsg(about);
         }
@@ -56,11 +61,22 @@ function AddForm() {
 
     }
 
+    const updateAbout = (event) =>{
+        console.log(about);
+        setAbout(event.target.value);
+        
+    }
+
+    const updateClick = () => {
+        setClicked(true);
+        console.log(clicked);
+    }
+
     return (
         <div className="form_container">
             <form className="form" onSubmit={handleSubmit}>
                 
-                <Button style={{fontFamily: "Zen Antique", borderColor:"grey",color: "black", fontSize:"14px"}} variant="outlined" component="label">Upload Image
+                <Button style={{fontFamily: "Zen Antique", borderColor:"grey",color: "black", fontSize:"14px",}} variant="outlined" component="label">Upload Image
                     <input required type="file" onChange={handleChange} />
                 </Button>
                 
@@ -69,20 +85,30 @@ function AddForm() {
                         InputLabelProps={{
                             style: {
                                 color: "black",
-                                fontSize: "14px",
+                                fontSize: "15px",
                                 textAlign: "center",
                                 fontFamily: "Zen Antique",
+                                
                             }}}
-                        required
+                        InputProps = {{
+                            style: {
+                                color: "black",
+                                fontSize: "15px",
+                                textAlign: "center",
+                                fontFamily: "Zen Antique",
+                                paddingTop: "20px",
+                            }}}
+                        //required
                         multiline 
                         fullWidth
-                        rows={4} 
+                        rows={5} 
                         id="outline-multiline-static" 
                         label="Please enter a description:"
                         variant="standard"
                         
                         value = {about}
-                        onChange= {(event) => setAbout(event.target.value)}/>
+                        onChange= {updateAbout}
+                        onClick={updateClick}/>
                 </div>
                 
                 <div className="output" >

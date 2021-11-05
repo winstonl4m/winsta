@@ -17,3 +17,9 @@ code {
   margin: 0 auto;
 }
 
+
+.form_button{
+  border: 0;
+  background-color: white;
+  cursor: pointer;
+}

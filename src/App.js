@@ -5,9 +5,10 @@ import ImageContainer from './components/ImageContainer';
 import Modal from './components/Modal';
 import React, { useState } from 'react';
 import { GrAddCircle } from 'react-icons/gr';
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider, createTheme } from '@material-ui/core/styles';
+import { AiOutlinePlus } from 'react-icons/ai';
 
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
     fontFamily: [
       'Zen Antique', 'serif',
@@ -18,6 +19,7 @@ const theme = createMuiTheme({
 function App() {
   const [selectedImg, setSelectedImg] = useState(null);
   const [selectedAbout, setSelectedAbout] = useState(null);
+  const [selectedTime, setSelectedTime] = useState(null);
 
   const [addclick, setAddclick] = useState(false);
 
@@ -31,18 +33,21 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
             <Title/>
-            <label>
-                <button onClick={toggleForm}/>
-                <GrAddCircle size={40} />
-            </label> 
+            
+                <button className="form_button" onClick={toggleForm}>
+                <AiOutlinePlus size={40} />
+                </button>            
             {addclick && <AddForm/>}
-            <ImageContainer setSelectedImg={setSelectedImg} setSelectedAbout={setSelectedAbout}  />
-            { selectedImg && selectedAbout &&
+            <ImageContainer setSelectedImg={setSelectedImg} setSelectedAbout={setSelectedAbout} setSelectedTime={setSelectedTime} />
+            { selectedImg && selectedAbout && selectedTime &&
               <Modal 
                 selectedImg={selectedImg} 
                 setSelectedImg={setSelectedImg}
                 selectedAbout={selectedAbout}
-                setSelectedAbout={setSelectedAbout} />}
+                setSelectedAbout={setSelectedAbout}
+                selectedTime={selectedTime}
+                setSelectedTime={setSelectedTime}
+                 />}
           </div>
     </ThemeProvider>
     

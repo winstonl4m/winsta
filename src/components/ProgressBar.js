@@ -15,7 +15,7 @@ const ProgressBar = ({file, setFile, post}) => {
 
     return (
         <div className="progress_bar"
-            >{progress}
+            >{progress +"%"}
             
         </div>
     )

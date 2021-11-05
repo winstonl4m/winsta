@@ -20,15 +20,25 @@ const Modal = ({selectedImg, setSelectedImg, selectedAbout, setSelectedAbout, se
 
                 
                     
+                    {/*
                     
                     
-                    
-                        <img src={selectedImg} alt ="enlarged pic"/>
+                    <img src={selectedImg} alt ="enlarged pic"/>
                             
                     <div className="backdrop_info">
                         <div className="backdrop_about">{selectedAbout}</div>
                         <div className="backdrop_time">{selectedTime}</div>
                     </div>
+                    */}
+
+                    <div className="container">
+                        <img src={selectedImg} alt ="enlarged pic">
+                        </img>
+                        <div className="about">{selectedAbout}</div>
+                        <div className="time">{selectedTime}</div>
+
+                    </div>
+                    
                         
              
                 

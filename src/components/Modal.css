@@ -8,7 +8,7 @@
   }
 
 
-  .backdrop img{
+  .backdropj img{
     display: inline-block;
     max-width: 50%;
     max-height: 80%;
@@ -18,7 +18,7 @@
     
   }
 
-.backdrop_info{
+.backdrop_infof{
   display: block;
   max-width: 50%;
   max-height: 70%;
@@ -33,7 +33,7 @@
   
 }
 
-.backdrop_info .backdrop_about {
+.backdrop_infof .backdrop_about {
   max-width: 50%;
   max-height: 70%;
   display: block;
@@ -46,11 +46,12 @@
   background-color: blue;
 }
 
-.backdrop_info .backdrop_time {
+.backdrop_infof .backdrop_time {
   max-width: 100%;
   max-height: 70%;
   display: block;
-  margin:auto;
+  position: relative;
+  margin: 0 auto;
   border: 3px solid white;
   color: black;
   text-align: right;
@@ -58,4 +59,42 @@
   white-space: pre-line;
   background-color: aqua;
   
+}
+
+
+
+.container{
+  
+  display: inline-block;
+  background-color: brown;
+  box-shadow: 3px 5px 7px rgba(0,0,0,0.5);
+  border: 3px solid white;
+  margin-top: 10%;
+}
+
+
+
+.container img{
+  display: block;
+  height: 500px;
+    width: auto;
+}
+
+.container .about{
+  width: 0;
+  min-width: 100%;
+  background-color: green;
+  white-space: pre-line;
+  word-wrap: break-word;
+  font-size: 18px;
+}
+
+.container .time {
+  width: 0;
+  min-width: 100%;
+  background-color: aqua;
+  color: black;
+  text-align: right;
+  font-size: 14px;
+  white-space: pre-line;
 }

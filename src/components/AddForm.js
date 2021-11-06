@@ -34,7 +34,7 @@ function AddForm() {
         if (selected && types.includes(selected.type)){
             setFile(selected);
             setError('');
-            console.log(isImage);
+            
             setIsImage(false);
             
             
@@ -52,12 +52,10 @@ function AddForm() {
         }else{
             setMsg(about);
         }
-        console.log(post);
+        
         setIsImage(true);
         setAbout('');
-        console.log(about);
-        console.log(isImage);
-        console.log(file);
+        
 
     }
 
@@ -99,7 +97,7 @@ function AddForm() {
                                 fontFamily: "Zen Antique",
                                 paddingTop: "20px",
                             }}}
-                        //required
+                        
                         multiline 
                         fullWidth
                         rows={5} 

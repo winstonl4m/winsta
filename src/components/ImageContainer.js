@@ -7,7 +7,7 @@ import { motion } from "framer-motion"
 const ImageContainer = ({setSelectedImg, setSelectedAbout, setSelectedTime}) => {
 
     const {docs} = useFirestore('images');
-    console.log(docs);
+    
 
     const convert = (timestamp) => {
         const date = "Posted on " + timestamp.toDate().toDateString().split(' ').slice(1).join(' ');
@@ -22,7 +22,7 @@ const ImageContainer = ({setSelectedImg, setSelectedAbout, setSelectedTime}) => 
         <div className="image_container"> 
             {docs && docs.map(doc =>(
                 <motion.div className="image_wrap" key = {doc.id}
-                    onClick ={()=> {setSelectedImg(doc.url);setSelectedAbout(doc.about);console.log(doc.createdAt);convert(doc.createdAt)}}
+                    onClick ={()=> {setSelectedImg(doc.url);setSelectedAbout(doc.about);convert(doc.createdAt)}}
                     whileHover={{opacity: 1}}
                 >
 

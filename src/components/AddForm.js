@@ -62,15 +62,16 @@ function AddForm() {
     }
 
     const updateAbout = (event) =>{
-        console.log(about);
+        
         setAbout(event.target.value);
         
     }
 
     const updateClick = () => {
         setClicked(true);
-        console.log(clicked);
     }
+
+    
 
     return (
         <div className="form_container">
@@ -108,7 +109,8 @@ function AddForm() {
                         
                         value = {about}
                         onChange= {updateAbout}
-                        onClick={updateClick}/>
+                        onClick={updateClick}
+                        />
                 </div>
                 
                 <div className="output" >

@@ -4,7 +4,6 @@ import AddForm from './components/AddForm';
 import ImageContainer from './components/ImageContainer';
 import Modal from './components/Modal';
 import React, { useState } from 'react';
-import { GrAddCircle } from 'react-icons/gr';
 import { ThemeProvider, createTheme } from '@material-ui/core/styles';
 import { AiOutlinePlus } from 'react-icons/ai';
 

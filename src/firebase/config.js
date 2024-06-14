@@ -3,8 +3,7 @@ import 'firebase/compat/storage';
 import 'firebase/compat/firestore';
 
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+// web app's Firebase configuration
 const firebaseConfig = {
   apiKey: "AIzaSyAGoWNxeX5ECwxaMm7uTnEgPY5onx5c37U",
   authDomain: "winsta-a0676.firebaseapp.com",
@@ -18,8 +17,14 @@ const firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+
+//server storage
 const projectStorage = firebase.storage();
+
+// to interact with firebase server
 const projectFirestore = firebase.firestore();
+
+
 const timestamp = firebase.firestore.FieldValue.serverTimestamp;
 
 export {projectStorage, projectFirestore, timestamp};

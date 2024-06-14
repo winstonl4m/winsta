@@ -16,14 +16,23 @@ const theme = createTheme({
 
 
 function App() {
+
+  //states for the modal
   const [selectedImg, setSelectedImg] = useState(null);
   const [selectedAbout, setSelectedAbout] = useState(null);
   const [selectedTime, setSelectedTime] = useState(null);
 
   const [addclick, setAddclick] = useState(false);
 
+  const [showAddForm, setShowAddForm] = useState(false)
+
+
+  //toggle AddForm if plus button is clicked
   const toggleForm = () =>{
+    console.log("click?before " + addclick);
     setAddclick(!addclick)
+    setShowAddForm(!showAddForm)
+    console.log("click?after " + addclick);
   }
 
 
@@ -36,7 +45,11 @@ function App() {
                 <button className="form_button" onClick={toggleForm}>
                 <AiOutlinePlus size={40} />
                 </button>            
-            {addclick && <AddForm/>}
+            
+            <div className="backdrop_addform">
+              {addclick && <AddForm showAddForm ={showAddForm} setShowAddForm={setShowAddForm}/>}
+            </div>
+            
             <ImageContainer setSelectedImg={setSelectedImg} setSelectedAbout={setSelectedAbout} setSelectedTime={setSelectedTime} />
             { selectedImg && selectedAbout && selectedTime &&
               <Modal 
